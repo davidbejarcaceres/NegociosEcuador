@@ -10,6 +10,7 @@
 
     <FrameLayout
         android:id="@+id/list"
+        android:background="#f1f1f1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

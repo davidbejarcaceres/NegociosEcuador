@@ -89,7 +89,7 @@ public class Adapter_listados extends RecyclerView.Adapter<Adapter_listados.Movi
                     //click Largo
 
 
-                    //ENVIO URL A LA ACTIVIDAD PARA CADA MEGOVIO
+                    //ENVIO URL A LA ACTIVIDAD PARA CADA NEGOCIO
                     Intent Nego = new Intent(context, Negocio_A.class);
                     Nego.putExtra("ID", items.get(i).getID());
                     Nego.putExtra("NOMBRE", items.get(i).getNOMBRE());
@@ -113,7 +113,7 @@ public class Adapter_listados extends RecyclerView.Adapter<Adapter_listados.Movi
                 } else {
                     //click Corto
 
-                    //ENVIO URL A LA ACTIVIDAD PARA CADA MEGOVIO
+                    //ENVIO URL A LA ACTIVIDAD PARA CADA NEGOCIO
                     Intent Nego = new Intent(context, Negocio_A.class);
                     Nego.putExtra("ID", items.get(i).getID());
                     Nego.putExtra("NOMBRE", items.get(i).getNOMBRE());

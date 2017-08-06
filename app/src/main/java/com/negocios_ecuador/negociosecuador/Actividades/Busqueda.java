@@ -9,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -81,6 +82,26 @@ public class Busqueda extends AppCompatActivity {
         getDATA();
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_bottom, R.anim.slide_to_top);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            finish();
+            overridePendingTransition(R.anim.slide_from_bottom, R.anim.slide_to_top);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void getDATA(){
@@ -185,7 +206,7 @@ public class Busqueda extends AppCompatActivity {
                 String Direccion1 = Direccion.toLowerCase();
                 boolean condicion1 = Direccion1.contains(query.toLowerCase());
 
-                //Busqueda Negocio Direccion
+                //Busqueda Negocio descripción
                 String Descripcion1 = Descripcion.toLowerCase();
                 boolean condicion2 = Descripcion1.contains(query.toLowerCase());
 

@@ -225,7 +225,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (id == android.R.id.home) {
             finish();
-
+            overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
         }
         return super.onOptionsItemSelected(item);
     }

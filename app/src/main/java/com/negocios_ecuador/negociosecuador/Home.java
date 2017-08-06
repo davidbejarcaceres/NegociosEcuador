@@ -227,6 +227,7 @@ public class Home extends AppCompatActivity
                 Nego.putExtra("termino", query);
 
                 startActivity(Nego);
+                overridePendingTransition(R.anim.slide_from_top, R.anim.slide_to_bottom);
                 return true;
             }
             @Override
