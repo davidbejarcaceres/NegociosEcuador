@@ -114,6 +114,7 @@ public class Negocio_A extends AppCompatActivity {
         myIntent.putExtra("LONGITUD", longitud);
         myIntent.putExtra("NOMBRE", NOMBRE);
         startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
     }
 
@@ -234,6 +235,12 @@ public class Negocio_A extends AppCompatActivity {
         startActivity(sendIntent);
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 
 

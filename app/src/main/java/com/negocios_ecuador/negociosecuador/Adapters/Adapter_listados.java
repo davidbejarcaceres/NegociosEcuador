@@ -1,9 +1,11 @@
 package com.negocios_ecuador.negociosecuador.Adapters;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,7 +26,7 @@ import java.util.List;
 import static com.negocios_ecuador.negociosecuador.R.id.imagen;
 import static com.negocios_ecuador.negociosecuador.R.id.item_touch_helper_previous_elevation;
 
-public class Adapter_listados extends RecyclerView.Adapter<Adapter_listados.MovieViewHolder>{
+public class Adapter_listados extends RecyclerView.Adapter<Adapter_listados.MovieViewHolder> {
     private List<Negocios> items;
     private Context context;
     public String URL,USUARIO,CLAVE;
@@ -96,9 +98,16 @@ public class Adapter_listados extends RecyclerView.Adapter<Adapter_listados.Movi
                     Nego.putExtra("IMAGEN", items.get(i).getIMAGEN());
                     Nego.putExtra("LATITUD", items.get(i).getLATITUD());
                     Nego.putExtra("LONGITUD", items.get(i).getLONGITUD());
+
+                    Activity activity = (Activity) context ;
+                    activity.startActivity(Nego);
+                    //Añade la animacion de entrada y la de salida
+
+                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
                     Log.e(":O",""+items.get(i).getID());
 
-                    context.startActivity(Nego);
+                    //context.startActivity(Nego);
 
 
                 } else {
@@ -115,7 +124,12 @@ public class Adapter_listados extends RecyclerView.Adapter<Adapter_listados.Movi
                     Nego.putExtra("LONGITUD", items.get(i).getLONGITUD());
                     Log.e(":O",""+items.get(i).getID());
 
-                    context.startActivity(Nego);
+                    Activity activity = (Activity) context ;
+                    activity.startActivity(Nego);
+                    //Añade la animacion de entrada y la de salida
+                    activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+                    //context.startActivity(Nego);
 
 
                 }
@@ -132,7 +146,6 @@ public class Adapter_listados extends RecyclerView.Adapter<Adapter_listados.Movi
 
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
-
 
 
 
